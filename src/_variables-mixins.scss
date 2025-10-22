@@ -3,7 +3,6 @@ $gold-500: hsl(39, 89%, 49%);
 $gold-600: hsl(28, 76%, 44%);
 
 $blue-500: hsl(230, 89%, 62%);
-$blue-700: hsl(229, 64%, 46%);
 
 $red-600: hsl(349, 71%, 52%);
 $red-800: hsl(347, 75%, 35%);
@@ -15,19 +14,13 @@ $light-blue-400: hsl(189, 59%, 53%);
 $light-blue-500: hsl(194, 58%, 42%);
 
 // === Neutral Colors ===
+$blue-700: hsl(229, 64%, 46%); // score-text
 $navy-900: hsl(229, 25%, 31%); // dark text
 $gray-600: hsl(246, 11%, 37%); // header outline
 
-// === Background ===
+// === Background -- Gradient ===
 $bg-gradient-start: hsl(214, 47%, 23%);
 $bg-gradient-end: hsl(237, 48%, 15%);
-
-// === Reused references ===
-$score-text: $blue-700;
-$header-outline: $gray-600;
-$dark-text: $navy-900;
-
-// === Gradient Example ===
 $radial-gradient: radial-gradient(
     circle at top,
     $bg-gradient-start,
@@ -50,7 +43,7 @@ $radial-gradient: radial-gradient(
     font-family: "Barlow Semi Condensed", sans-serif;
 }
 
-@mixin shadow_radius($radius: 5px) {
+@mixin shadow-radius($radius: 5px) {
     box-shadow: rgba(0, 0, 0, 0.03) 0px 6px 24px 0px,
         rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
     border-radius: $radius;
