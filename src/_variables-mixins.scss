@@ -1,0 +1,57 @@
+// === Primary Colors ===
+$gold-500: hsl(39, 89%, 49%);
+$gold-600: hsl(28, 76%, 44%);
+
+$blue-500: hsl(230, 89%, 62%);
+$blue-700: hsl(229, 64%, 46%);
+
+$red-600: hsl(349, 71%, 52%);
+$red-800: hsl(347, 75%, 35%);
+
+$purple-600: hsl(261, 73%, 60%);
+$purple-700: hsl(261, 51%, 44%);
+
+$light-blue-400: hsl(189, 59%, 53%);
+$light-blue-500: hsl(194, 58%, 42%);
+
+// === Neutral Colors ===
+$navy-900: hsl(229, 25%, 31%); // dark text
+$gray-600: hsl(246, 11%, 37%); // header outline
+
+// === Background ===
+$bg-gradient-start: hsl(214, 47%, 23%);
+$bg-gradient-end: hsl(237, 48%, 15%);
+
+// === Reused references ===
+$score-text: $blue-700;
+$header-outline: $gray-600;
+$dark-text: $navy-900;
+
+// === Gradient Example ===
+$radial-gradient: radial-gradient(
+    circle at top,
+    $bg-gradient-start,
+    $bg-gradient-end
+);
+
+// Mixins
+@mixin flex($direction: row, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin border($width: 1px, $color: red) {
+    border: $width solid $color;
+}
+
+@mixin font() {
+    font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+@mixin shadow_radius($radius: 5px) {
+    box-shadow: rgba(0, 0, 0, 0.03) 0px 6px 24px 0px,
+        rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    border-radius: $radius;
+}
