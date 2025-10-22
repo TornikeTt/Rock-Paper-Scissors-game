@@ -31,23 +31,13 @@ header {
     margin-top: 30px;
 
     width: 50%;
-    height: 130px;
+    height: 150px;
     overflow: hidden;
     padding: 20px;
 
     @include border(2px, $gray-600);
     @include shadow-radius(10px);
     @include flex(row, space-between, center);
-}
-
-.play-option-list {
-    ul {
-        list-style-type: none;
-        font-weight: bold;
-        color: white;
-        line-height: 0.8;
-        letter-spacing: 1px;
-    }
 }
 
 .score {

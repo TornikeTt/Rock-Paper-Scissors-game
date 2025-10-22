@@ -1,14 +1,10 @@
+import logo from "../assets/images/logo-bonus.svg";
+
 function Header() {
     return (
         <header>
-            <div className="play-option-list">
-                <ul>
-                    <li>ROCK</li>
-                    <li>PAPER</li>
-                    <li>SCISSORS</li>
-                    <li>LIZARD</li>
-                    <li>SPOCK</li>
-                </ul>
+            <div className="play-option-logo">
+                <img src={logo} />
             </div>
             <div className="score">
                 <h2>SCORE</h2>
