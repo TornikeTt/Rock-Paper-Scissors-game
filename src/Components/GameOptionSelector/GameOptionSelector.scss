@@ -51,7 +51,8 @@
         @include flex(column, space-around, center);
     }
 
-    button {
+    .rock-paper-scissors,
+    .rock-paper-scissors-lizard-spock {
         width: 40%;
         height: 40%;
     }

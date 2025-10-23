@@ -2,11 +2,13 @@
 
 main {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background: $radial-gradient;
+    padding: 20px;
+    overflow: auto;
 
     @include font;
-    @include flex(column, flex-start, center);
+    @include flex(column, space-around, center);
 }
 
 /*
@@ -22,8 +24,6 @@ select {
 
 // Header Component
 header {
-    margin-top: 30px;
-
     width: 50%;
     height: 150px;
     overflow: hidden;
@@ -51,8 +51,81 @@ header {
         p {
             font-size: 46px;
             font-weight: bold;
-            color: $navy-900;
+            color: $gray-600;
         }
+    }
+}
+
+// Play Component
+.gamePlay {
+    width: 100%;
+}
+
+.pentagon-container {
+    width: 100%;
+    height: 500px;
+
+    @include flex;
+}
+
+.pentagon {
+    position: relative;
+    @include flex;
+
+    img {
+        object-fit: cover;
+    }
+
+    .btn {
+        position: absolute;
+        width: 135px;
+        height: 135px;
+        border-radius: 50%;
+        cursor: pointer;
+        @include flex;
+
+        img {
+            width: 50%;
+            height: 50%;
+        }
+    }
+
+    .scissors {
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        @include border(15px, $gold-500);
+    }
+
+    .paper {
+        top: 37%;
+        right: 0%;
+        transform: translate(50%, -50%);
+
+        @include border(15px, $blue-500);
+    }
+
+    .spock {
+        top: 37%;
+        left: 0%;
+        transform: translate(-50%, -50%);
+
+        @include border(15px, $light-blue-400);
+    }
+
+    .rock {
+        bottom: -17%;
+        right: 0;
+
+        @include border(15px, $red-600);
+    }
+
+    .lizard {
+        bottom: -17%;
+        left: 0;
+
+        @include border(15px, $purple-600);
     }
 }
 
@@ -88,5 +161,45 @@ footer {
 
     .back {
         @include flex(row, space-evenly, center);
+    }
+}
+
+@media (max-width: 900px) {
+    header {
+        width: 90%;
+    }
+}
+
+@media (max-width: 400px) {
+    header {
+        width: 95%;
+
+        .play-option-logo {
+            img {
+                width: 80px;
+            }
+        }
+
+        .score {
+            width: 100px;
+            height: 100%;
+            background-color: white;
+
+            @include flex(column, center, center);
+            @include shadow-radius;
+
+            h2 {
+                font-size: 12px;
+                font-weight: 600;
+                color: $blue-700;
+                letter-spacing: 1px;
+            }
+
+            p {
+                font-size: 46px;
+                font-weight: bold;
+                color: $navy-900;
+            }
+        }
     }
 }

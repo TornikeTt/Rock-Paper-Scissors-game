@@ -8,6 +8,7 @@ function Game({ gameMode, setGameMode }) {
     return (
         <main>
             <Header gameMode={gameMode} />
+            <Play gameMode={gameMode} />
             <Footer gameMode={gameMode} setGameMode={setGameMode} />
         </main>
     );
