@@ -9,7 +9,9 @@
     @include flex(row, space-evenly, center);
 }
 
-button {
+// buttons
+.rock-paper-scissors,
+.rock-paper-scissors-lizard-spock {
     width: 300px;
     height: 70%;
     max-height: 450px;

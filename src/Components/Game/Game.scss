@@ -1,0 +1,92 @@
+@use "../../variables-mixins" as *;
+
+main {
+    width: 100%;
+    height: 100vh;
+    background: $radial-gradient;
+
+    @include font;
+    @include flex(column, flex-start, center);
+}
+
+/*
+    Form elements don't always inherit font-family, 
+    so we should set it explicitly 
+*/
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+// Header Component
+header {
+    margin-top: 30px;
+
+    width: 50%;
+    height: 150px;
+    overflow: hidden;
+    padding: 20px;
+
+    @include border(2px, $gray-600);
+    @include shadow-radius(10px);
+    @include flex(row, space-between, center);
+
+    .score {
+        width: 120px;
+        height: 100%;
+        background-color: white;
+
+        @include flex(column, center, center);
+        @include shadow-radius;
+
+        h2 {
+            font-size: 12px;
+            font-weight: 600;
+            color: $blue-700;
+            letter-spacing: 1px;
+        }
+
+        p {
+            font-size: 46px;
+            font-weight: bold;
+            color: $navy-900;
+        }
+    }
+}
+
+// Bottom Component
+footer {
+    width: 90%;
+    height: 50px;
+
+    @include flex(row, space-between, center);
+
+    .back,
+    .rules {
+        width: 130px;
+        height: inherit;
+
+        border: none;
+        outline: none;
+        background-color: transparent;
+        cursor: pointer;
+
+        font-weight: bold;
+        color: white;
+        line-height: 0.8;
+        letter-spacing: 1.1px;
+
+        @include border(2px, $gray-600);
+        @include shadow-radius(10px);
+
+        &:active {
+            transform: translateY(4px);
+        }
+    }
+
+    .back {
+        @include flex(row, space-evenly, center);
+    }
+}

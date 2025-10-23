@@ -1,6 +1,12 @@
-import logo from "../../assets/images/logo-bonus.svg";
+import FiveOptionGameLogo from "../../assets/images/logo-bonus.svg";
+import ThreeOptionGameLogo from "../../assets/images/logo.svg";
 
-function Header() {
+function Header({ gameMode }) {
+    const logo =
+        gameMode === "rock-paper-scissors"
+            ? ThreeOptionGameLogo
+            : FiveOptionGameLogo;
+
     return (
         <header>
             <div className="play-option-logo">
