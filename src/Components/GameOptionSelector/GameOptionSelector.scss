@@ -1,0 +1,56 @@
+@use "../../variables-mixins" as *;
+
+.options {
+    width: 100%;
+    height: 100vh;
+    background: $bg-gradient-end;
+
+    @include font;
+    @include flex(row, space-evenly, center);
+}
+
+button {
+    width: 300px;
+    height: 70%;
+    max-height: 450px;
+
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    overflow: hidden;
+
+    border-radius: 15px;
+    box-shadow: whitesmoke 0px 0px 0px 2px;
+
+    transition: all 0.2s;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.rock-paper-scissors {
+    background-image: url("../../assets/images/rock-paper-scissors.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.rock-paper-scissors-lizard-spock {
+    background-image: url("../../assets/images/rock-paper-scissors-lizard-spock.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+@media (max-width: 550px) {
+    .options {
+        @include flex(column, space-around, center);
+    }
+
+    button {
+        width: 40%;
+        height: 40%;
+    }
+}
