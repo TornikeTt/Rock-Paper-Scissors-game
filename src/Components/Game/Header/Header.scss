@@ -1,0 +1,52 @@
+@use "../../../variables-mixins" as *;
+
+header {
+    width: min(800px, 100%);
+    height: 150px;
+    overflow: hidden;
+    padding: 20px;
+
+    @include border(2px, $gray-600);
+    @include shadow-radius(10px);
+    @include flex(row, space-between, center);
+}
+
+.scoreContainer {
+    width: 120px;
+    height: 100%;
+    background-color: white;
+    overflow: hidden;
+
+    @include shadow-radius;
+    @include flex(column, space-around, center);
+
+    h2 {
+        font-size: 12px;
+        font-weight: 600;
+        color: $blue-700;
+        letter-spacing: 1px;
+    }
+}
+
+.score {
+    width: 100%;
+
+    @include flex(row, space-around, center);
+
+    hr {
+        width: 1px;
+        height: 100%;
+        background-color: $gray-600;
+        border: none; // remove default border
+    }
+
+    section {
+        @include flex(column, flex-start, center);
+
+        p {
+            font-size: 40px;
+            font-weight: bold;
+            color: $gray-600;
+        }
+    }
+}

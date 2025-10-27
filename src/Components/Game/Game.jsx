@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Header from "./Header";
+import Header from "./Header/Header";
 import Play from "./Play";
 import Footer from "./Footer";
 
@@ -16,10 +16,14 @@ function Game({ gameMode, setGameMode }) {
             : rock_paper_sissors_lizard_spock_RULES;
 
     const [isRulsOpen, setIsRulesOpen] = useState(false);
+    const [score, setScore] = useState({
+        player: 12,
+        computer: 12,
+    });
 
     return (
         <main>
-            <Header gameMode={gameMode} />
+            <Header gameMode={gameMode} score={score} />
             <Play gameMode={gameMode} />
             {isRulsOpen && (
                 <div className="rules-content">
