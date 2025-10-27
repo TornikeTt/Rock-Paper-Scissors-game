@@ -4,11 +4,16 @@ main {
     width: 100%;
     min-height: 100vh;
     background: $radial-gradient;
-    padding: 20px;
+    padding: 32px;
     overflow: auto;
+    position: relative;
 
     @include font;
     @include flex(column, space-around, center);
+
+    @media (max-width: 400px) {
+        padding: 10px;
+    }
 }
 
 /*
@@ -24,7 +29,7 @@ select {
 
 // Header Component
 header {
-    width: 50%;
+    width: min(800px, 100%);
     height: 150px;
     overflow: hidden;
     padding: 20px;
@@ -60,6 +65,10 @@ header {
 .gamePlay {
     width: 100%;
     height: 500px;
+
+    @media (max-width: 375px) {
+        height: 300px;
+    }
 }
 
 .shape-container {
@@ -83,12 +92,8 @@ header {
         height: 135px;
         border-radius: 50%;
         cursor: pointer;
-        @include flex;
 
-        img {
-            width: 50%;
-            height: 50%;
-        }
+        @include flex;
     }
 
     .scissors {
@@ -128,6 +133,40 @@ header {
 
         @include border(15px, $purple-600);
     }
+
+    @media (max-width: 475px) {
+        .pentagonShape {
+            width: 250px;
+            height: 250px;
+        }
+
+        .btn {
+            width: 100px;
+            height: 100px;
+
+            img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+
+    @media (max-width: 375px) {
+        .pentagonShape {
+            width: 200px;
+            height: 200px;
+        }
+
+        .btn {
+            width: 90px;
+            height: 90px;
+
+            img {
+                width: 35px;
+                height: 35px;
+            }
+        }
+    }
 }
 
 .triangle {
@@ -145,11 +184,6 @@ header {
         border-radius: 50%;
         cursor: pointer;
         @include flex;
-
-        img {
-            width: 50%;
-            height: 50%;
-        }
     }
 
     .paper {
@@ -174,11 +208,129 @@ header {
 
         @include border(15px, $red-600);
     }
+
+    @media (max-width: 475px) {
+        .triangleShape {
+            width: 250px;
+            height: 250px;
+        }
+
+        .btn {
+            width: 100px;
+            height: 100px;
+
+            img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        .rock {
+            bottom: -10%;
+            right: 26%;
+
+            @include border(15px, $red-600);
+        }
+    }
+
+    @media (max-width: 375px) {
+        .triangleShape {
+            width: 200px;
+            height: 200px;
+        }
+
+        .btn {
+            width: 90px;
+            height: 90px;
+
+            img {
+                width: 35px;
+                height: 35px;
+            }
+        }
+    }
+}
+
+// ruls content layout
+.rules-content {
+    position: absolute;
+    width: 400px;
+    height: 450px;
+    background-color: white;
+    overflow: auto;
+    padding: 2rem;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 50px, auto;
+
+    @include shadow-radius(10px);
+    @include positionAbsolute;
+
+    h2 {
+        align-self: flex-start;
+        color: $navy-900;
+    }
+
+    .closeButton {
+        width: 32px;
+        height: 32px;
+        justify-self: flex-end;
+        align-self: flex-start;
+
+        border: none;
+        outline: none;
+        background-color: transparent;
+        cursor: pointer;
+
+        .closeIcone {
+            width: inherit;
+            height: inherit;
+            color: gray;
+        }
+    }
+
+    img {
+        width: 300px;
+        height: 300px;
+
+        grid-column: 1 / -1;
+        justify-self: center;
+        align-self: center;
+    }
+
+    @media (max-width: 430px) {
+        position: fixed;
+        width: 100%;
+        height: 105%;
+
+        grid-template-rows: 40px auto 40px;
+        grid-template-columns: 1fr;
+        align-content: space-around;
+
+        h2 {
+            justify-self: center;
+            align-self: center;
+        }
+
+        .closeButton {
+            grid-row-start: 3;
+            justify-self: center;
+            align-self: center;
+        }
+    }
+
+    @media (max-width: 300px) {
+        img {
+            width: 250px;
+            height: 250px;
+        }
+    }
 }
 
 // Bottom Component
 footer {
-    width: 90%;
+    width: 100%;
     height: 50px;
 
     @include flex(row, space-between, center);
@@ -208,45 +360,5 @@ footer {
 
     .back {
         @include flex(row, space-evenly, center);
-    }
-}
-
-@media (max-width: 900px) {
-    header {
-        width: 90%;
-    }
-}
-
-@media (max-width: 400px) {
-    header {
-        width: 95%;
-
-        .play-option-logo {
-            img {
-                width: 80px;
-            }
-        }
-
-        .score {
-            width: 100px;
-            height: 100%;
-            background-color: white;
-
-            @include flex(column, center, center);
-            @include shadow-radius;
-
-            h2 {
-                font-size: 12px;
-                font-weight: 600;
-                color: $blue-700;
-                letter-spacing: 1px;
-            }
-
-            p {
-                font-size: 46px;
-                font-weight: bold;
-                color: $navy-900;
-            }
-        }
     }
 }

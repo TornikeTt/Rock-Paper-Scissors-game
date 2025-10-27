@@ -1,11 +1,11 @@
-import FiveOptionGameLogo from "../../assets/images/logo-bonus.svg";
-import ThreeOptionGameLogo from "../../assets/images/logo.svg";
+import rock_paper_sissors_LOGO from "../../assets/images/logo.svg";
+import rock_paper_scissors_lizard_spock_LOGO from "../../assets/images/logo-bonus.svg";
 
 function Header({ gameMode }) {
     const logo =
         gameMode === "rock-paper-scissors"
-            ? ThreeOptionGameLogo
-            : FiveOptionGameLogo;
+            ? rock_paper_sissors_LOGO
+            : rock_paper_scissors_lizard_spock_LOGO;
 
     return (
         <header>
@@ -14,7 +14,7 @@ function Header({ gameMode }) {
             </div>
             <div className="score">
                 <h2>SCORE</h2>
-                <p>12</p>
+                <p>0</p>
             </div>
         </header>
     );

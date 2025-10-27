@@ -12,17 +12,21 @@ function Play({ gameMode }) {
         if (gameMode === "rock-paper-scissors") {
             return (
                 <div className="triangle">
-                    <img src={triangleShape} alt="triangle" />
+                    <img
+                        src={triangleShape}
+                        alt="triangle"
+                        className="triangleShape"
+                    />
 
-                    <button class="btn paper">
+                    <button className="btn paper">
                         <img src={paper} alt="paper" />
                     </button>
 
-                    <button class="btn scissors">
+                    <button className="btn scissors">
                         <img src={scissors} alt="scissors" />
                     </button>
 
-                    <button class="btn rock">
+                    <button className="btn rock">
                         <img src={rock} alt="rock" />
                     </button>
                 </div>
@@ -30,24 +34,28 @@ function Play({ gameMode }) {
         } else {
             return (
                 <div className="pentagon">
-                    <img src={pentagonShape} alt="pentagon" />
+                    <img
+                        src={pentagonShape}
+                        alt="pentagon"
+                        className="pentagonShape"
+                    />
 
-                    <button class="btn scissors">
+                    <button className="btn scissors">
                         <img src={scissors} alt="scissors" />
                     </button>
 
-                    <button class="btn paper">
+                    <button className="btn paper">
                         <img src={paper} alt="paper" />
                     </button>
 
-                    <button class="btn spock">
+                    <button className="btn spock">
                         <img src={spock} alt="spock" />
                     </button>
 
-                    <button class="btn rock">
+                    <button className="btn rock">
                         <img src={rock} alt="rock" />
                     </button>
-                    <button class="btn lizard">
+                    <button className="btn lizard">
                         <img src={lizard} alt="lizard" />
                     </button>
                 </div>
