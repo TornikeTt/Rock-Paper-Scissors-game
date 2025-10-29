@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Header from "./Header/Header";
-import Play from "./Play";
+import Play from "./Play/Play";
 import Footer from "./Footer";
 
 import rock_paper_sissors_RULES from "../../assets/images/image-rules.svg";
@@ -17,8 +17,8 @@ function Game({ gameMode, setGameMode }) {
 
     const [isRulsOpen, setIsRulesOpen] = useState(false);
     const [score, setScore] = useState({
-        player: 12,
-        computer: 12,
+        player: 0,
+        computer: 0,
     });
 
     return (
