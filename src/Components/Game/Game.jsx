@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, createContext } from "react";
 import Header from "./Header/Header";
 import Play from "./Play/Play";
 import Footer from "./Footer";
@@ -9,28 +9,34 @@ import { MdOutlineClose } from "react-icons/md";
 
 import "./Game.scss";
 
-function Game({ gameMode, setGameMode }) {
-    const rulesLeyout =
-        gameMode === "rock-paper-scissors"
-            ? rock_paper_sissors_RULES
-            : rock_paper_sissors_lizard_spock_RULES;
+export const GameContext = createContext();
 
+function Game({ gameMode, setGameMode }) {
     const [isRulsOpen, setIsRulesOpen] = useState(false);
     const [score, setScore] = useState({
         player: 0,
         computer: 0,
     });
 
+    const rulesLeyout =
+        gameMode === "rock-paper-scissors"
+            ? rock_paper_sissors_RULES
+            : rock_paper_sissors_lizard_spock_RULES;
+
     return (
         <main>
             <Header gameMode={gameMode} score={score} />
-            <Play gameMode={gameMode} />
+
+            <GameContext.Provider value={{ score, setScore }}>
+                <Play gameMode={gameMode} />
+            </GameContext.Provider>
+
             {isRulsOpen && (
                 <div className="rules-content">
                     <h2>RULES</h2>
                     <button
                         onClick={() => setIsRulesOpen(false)}
-                        ype="button"
+                        type="button"
                         className="closeButton"
                     >
                         <MdOutlineClose className="closeIcone" />
@@ -38,6 +44,7 @@ function Game({ gameMode, setGameMode }) {
                     <img src={rulesLeyout} alt="rules" />
                 </div>
             )}
+
             <Footer
                 gameMode={gameMode}
                 setGameMode={setGameMode}
