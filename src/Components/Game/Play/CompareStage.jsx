@@ -11,8 +11,8 @@ function CompareStage({
     const [winner, setWinner] = useState("");
     const { score, setScore } = useContext(GameContext);
 
-    const getWinner = (playerChoice, computerChoice) => {
-        if (playerChoice === computerChoice) return "DRAW";
+    const getWinner = (player, computer) => {
+        if (player === computer) return "DRAW";
 
         const winningCombinations = {
             scissors: ["paper", "lizard"],
@@ -22,7 +22,7 @@ function CompareStage({
             spock: ["scissors", "rock"],
         };
 
-        return winningCombinations[playerChoice].includes(computerChoice)
+        return winningCombinations[player].includes(computer)
             ? "YOU WIN"
             : "YOU LOSE";
     };
