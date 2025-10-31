@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Pickstage from "./pickStage";
+import Pickstage from "./Pickstage";
 import CompareStage from "./CompareStage";
 
 import rock from "../../../assets/images/icon-rock.svg";
