@@ -195,10 +195,15 @@
 
 // CompareStage componenet
 .pickedContainer {
-    width: 100%;
+    width: min(1000px, 100%);
     height: 500px;
 
-    @include flex;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
 
     .playerContainer,
     .computerContainer {
@@ -226,6 +231,7 @@
             }
         }
 
+        // START - The pulse effect appears once the winner is decided
         .winner {
             &::before,
             &::after {
@@ -264,6 +270,7 @@
                 }
             }
         }
+        // EDN - The pulse effect appears once the winner is decided
 
         .scissors {
             @include border(40px, $gold-500);
@@ -314,8 +321,21 @@
         }
     }
 
+    // =====================================
     @media (max-width: 800px) {
-        height: 400px;
+        height: 450px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr 120px;
+
+        .computerPicked {
+            grid-row-start: 1;
+            grid-column-start: 2;
+        }
+
+        .resultContainer {
+            grid-row-start: 2;
+            grid-column: 1 / -1;
+        }
 
         .playerContainer,
         .computerContainer {
@@ -332,20 +352,10 @@
                 border-width: 20px;
             }
         }
-
-        .resultContainer {
-            h1 {
-                font-size: 2rem;
-            }
-
-            button {
-                width: 150px;
-            }
-        }
     }
 
-    @media (max-width: 550px) {
-        height: 250px;
+    @media (max-width: 475px) {
+        grid-template-rows: 2fr 1fr;
 
         .playerContainer,
         .computerContainer {
@@ -373,38 +383,15 @@
         }
 
         .resultContainer {
+            align-self: flex-start;
+
             h1 {
-                font-size: 1rem;
+                font-size: 2rem;
             }
 
             button {
-                width: 100px;
-            }
-        }
-    }
-
-    @media (max-width: 550px) {
-        .playerContainer,
-        .computerContainer {
-            .playerPicked,
-            .computerPicked {
-                width: 110px;
-                height: 110px;
-
-                img {
-                    width: 40px;
-                    height: 40px;
-                }
-            }
-
-            h2 {
-                font-size: 0.7rem;
-            }
-        }
-
-        .resultContainer {
-            button {
-                width: 80px;
+                width: 150px;
+                height: 30px;
             }
         }
     }

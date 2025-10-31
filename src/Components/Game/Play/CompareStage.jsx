@@ -59,12 +59,14 @@ function CompareStage({
                 </div>
             </div>
 
-            {winner && (
-                <div className="resultContainer">
-                    <h1>{winner}</h1>
-                    <button onClick={handleReset}>PLAY AGAIN</button>
-                </div>
-            )}
+            <div className="resultContainer">
+                {winner && (
+                    <>
+                        <h1>{winner}</h1>
+                        <button onClick={handleReset}>PLAY AGAIN</button>
+                    </>
+                )}
+            </div>
 
             <div className="computerContainer">
                 <h2>THE HOUSE PICKED</h2>
