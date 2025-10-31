@@ -24,23 +24,27 @@ function Pickstage({
     };
 
     return (
-        <div className="shape-container">
-            <div className={isClassic ? "triangle" : "pentagon"}>
-                <img
-                    src={isClassic ? triangleShape : pentagonShape}
-                    alt={isClassic ? "triangle" : "pentagon"}
-                    className={isClassic ? "triangleShape" : "pentagonShape"}
-                />
+        <div className="gamePlay">
+            <div className="shape-container">
+                <div className={isClassic ? "triangle" : "pentagon"}>
+                    <img
+                        src={isClassic ? triangleShape : pentagonShape}
+                        alt={isClassic ? "triangle" : "pentagon"}
+                        className={
+                            isClassic ? "triangleShape" : "pentagonShape"
+                        }
+                    />
 
-                {gameOptions.map((option) => (
-                    <button
-                        key={option}
-                        className={`btn ${option}`}
-                        onClick={() => handleChoice(option)}
-                    >
-                        <img src={optionImages[option]} alt={option} />
-                    </button>
-                ))}
+                    {gameOptions.map((option) => (
+                        <button
+                            key={option}
+                            className={`btn ${option}`}
+                            onClick={() => handleChoice(option)}
+                        >
+                            <img src={optionImages[option]} alt={option} />
+                        </button>
+                    ))}
+                </div>
             </div>
         </div>
     );

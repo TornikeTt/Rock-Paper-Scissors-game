@@ -50,7 +50,11 @@ function CompareStage({
         <div className="pickedContainer">
             <div className="playerContainer">
                 <h2>YOU PICKED</h2>
-                <div className={`playerPicked ${playerChoice}`}>
+                <div
+                    className={`playerPicked ${playerChoice} ${
+                        winner === "YOU WIN" && "winner"
+                    }`}
+                >
                     <img src={optionImages[playerChoice]} alt={playerChoice} />
                 </div>
             </div>
@@ -65,7 +69,11 @@ function CompareStage({
             <div className="computerContainer">
                 <h2>THE HOUSE PICKED</h2>
 
-                <div className={`computerPicked ${computerChoice}`}>
+                <div
+                    className={`computerPicked ${computerChoice} ${
+                        winner === "YOU LOSE" && "winner"
+                    }   `}
+                >
                     {computerChoice && (
                         <img
                             src={optionImages[computerChoice]}

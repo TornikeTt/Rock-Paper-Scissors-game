@@ -22,26 +22,26 @@ function Play({ gameMode }) {
         spock,
     };
 
-    return (
-        <div className="gamePlay">
-            {playerChoice === "" ? (
-                <Pickstage
-                    gameMode={gameMode}
-                    setPlayerChoice={setPlayerChoice}
-                    setComputerChoice={setComputerChoice}
-                    optionImages={optionImages}
-                />
-            ) : (
-                <CompareStage
-                    playerChoice={playerChoice}
-                    setPlayerChoice={setPlayerChoice}
-                    computerChoice={computerChoice}
-                    setComputerChoice={setComputerChoice}
-                    optionImages={optionImages}
-                />
-            )}
-        </div>
-    );
+    if (playerChoice === "") {
+        return (
+            <Pickstage
+                gameMode={gameMode}
+                setPlayerChoice={setPlayerChoice}
+                setComputerChoice={setComputerChoice}
+                optionImages={optionImages}
+            />
+        );
+    } else {
+        return (
+            <CompareStage
+                playerChoice={playerChoice}
+                setPlayerChoice={setPlayerChoice}
+                computerChoice={computerChoice}
+                setComputerChoice={setComputerChoice}
+                optionImages={optionImages}
+            />
+        );
+    }
 }
 
 export default Play;

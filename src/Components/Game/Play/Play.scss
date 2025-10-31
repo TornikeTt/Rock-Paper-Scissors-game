@@ -1,6 +1,6 @@
 @use "../../../variables-mixins" as *;
 
-// Play Component
+// Pickstage Component
 .gamePlay {
     width: 100%;
     height: 500px;
@@ -193,9 +193,10 @@
     }
 }
 
+// CompareStage componenet
 .pickedContainer {
     width: 100%;
-    height: 100%;
+    height: 500px;
 
     @include flex;
 
@@ -215,11 +216,52 @@
             background-color: whitesmoke;
             box-shadow: inset rgba(99, 100, 111, 0.2) 0px 10px 0px 0px;
 
+            position: relative;
+
             @include flex;
 
             img {
                 width: 100px;
                 height: 100px;
+            }
+        }
+
+        .winner {
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+
+                width: 100%;
+                height: 100%;
+                background-color: whitesmoke;
+
+                border-radius: 100%;
+            }
+
+            &::before {
+                animation: pulse 1s forwards;
+            }
+
+            &::after {
+                animation: pulse 3s forwards;
+            }
+
+            @keyframes pulse {
+                0% {
+                    opacity: 0.1;
+                    transform: scale(1);
+                }
+
+                50% {
+                    opacity: 0.1;
+                    transform: scale(2);
+                }
+
+                100% {
+                    opacity: 0;
+                    transform: scale(2);
+                }
             }
         }
 
@@ -269,6 +311,101 @@
             @include shadow-radius();
             font-weight: 450;
             letter-spacing: 1px;
+        }
+    }
+
+    @media (max-width: 800px) {
+        height: 400px;
+
+        .playerContainer,
+        .computerContainer {
+            .playerPicked,
+            .computerPicked {
+                width: 200px;
+                height: 200px;
+            }
+            .scissors,
+            .paper,
+            .spock,
+            .rock,
+            .lizard {
+                border-width: 20px;
+            }
+        }
+
+        .resultContainer {
+            h1 {
+                font-size: 2rem;
+            }
+
+            button {
+                width: 150px;
+            }
+        }
+    }
+
+    @media (max-width: 550px) {
+        height: 250px;
+
+        .playerContainer,
+        .computerContainer {
+            .playerPicked,
+            .computerPicked {
+                width: 150px;
+                height: 150px;
+
+                img {
+                    width: 60px;
+                    height: 60px;
+                }
+            }
+            .scissors,
+            .paper,
+            .spock,
+            .rock,
+            .lizard {
+                border-width: 10px;
+            }
+
+            h2 {
+                font-size: 1rem;
+            }
+        }
+
+        .resultContainer {
+            h1 {
+                font-size: 1rem;
+            }
+
+            button {
+                width: 100px;
+            }
+        }
+    }
+
+    @media (max-width: 550px) {
+        .playerContainer,
+        .computerContainer {
+            .playerPicked,
+            .computerPicked {
+                width: 110px;
+                height: 110px;
+
+                img {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+
+            h2 {
+                font-size: 0.7rem;
+            }
+        }
+
+        .resultContainer {
+            button {
+                width: 80px;
+            }
         }
     }
 }
