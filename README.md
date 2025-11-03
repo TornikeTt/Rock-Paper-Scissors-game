@@ -12,13 +12,13 @@ A fun and interactive Rock-Paper-Scissors game where the user can play against t
 
 ## 📷 Screenshots
 
-| Game Selection Screen                                      | Classic Rock-Paper-Scissors                                  |
-| ---------------------------------------------------------- | ------------------------------------------------------------ |
-| ![Game Selection](./screenshots/game-selection-screen.png) | ![Classic Mode](./screenshots/rock-paper-scissors-basic.png) |
+| Game Selection                                      | Classic Rock-Paper-Scissors                                  |
+| --------------------------------------------------- | ------------------------------------------------------------ |
+| ![Game Selection](./screenshots/game-selection.png) | ![Classic Mode](./screenshots/rock-paper-scissors-basic.png) |
 
-| Extended Mode (with Lizard & Spock)                              | Game Result                                          |
-| ---------------------------------------------------------------- | ---------------------------------------------------- |
-| ![Extended Mode](./screenshots/rock-paper-scissors-extended.png) | ![Game Result](./screenshots/game-result-screen.png) |
+| Extended Mode (with Lizard & Spock)                              | Game Result                                   |
+| ---------------------------------------------------------------- | --------------------------------------------- |
+| ![Extended Mode](./screenshots/rock-paper-scissors-extended.png) | ![Game Result](./screenshots/game-result.png) |
 
 ---
 
